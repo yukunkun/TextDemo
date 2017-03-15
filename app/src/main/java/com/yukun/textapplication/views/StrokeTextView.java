@@ -37,7 +37,7 @@ public class StrokeTextView extends TextView {
 //        if (m_bDrawSideLine) {
             // 描外层
             setTextColorUseReflection(Color.BLUE);
-            m_TextPaint.setStrokeWidth(25);
+            m_TextPaint.setStrokeWidth(2);
             m_TextPaint.setStyle(Paint.Style.FILL_AND_STROKE);
             super.onDraw(canvas);
 

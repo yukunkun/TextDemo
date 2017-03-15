@@ -3,10 +3,14 @@ package com.yukun.textapplication;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.mcxtzhang.pathanimlib.PathAnimView;
 import com.mcxtzhang.pathanimlib.StoreHouseAnimView;
@@ -14,6 +18,7 @@ import com.mcxtzhang.pathanimlib.res.StoreHousePath;
 import com.mcxtzhang.pathanimlib.utils.PathParserUtils;
 import com.yukun.textapplication.observerutil.NameObservable;
 import com.yukun.textapplication.observerutil.NameObserver;
+import com.yukun.textapplication.receiver.StateBroadcastReceiver;
 import com.yukun.textapplication.views.GiftFrameLayout;
 import com.yukun.textapplication.views.GiftSendModel;
 
@@ -27,11 +32,18 @@ public class ObserableActivity extends AppCompatActivity {
     private GiftFrameLayout giftFrameLayout1;
     private GiftFrameLayout giftFrameLayout2;
     List<GiftSendModel> giftSendModelList = new ArrayList<GiftSendModel>();
+    private StateBroadcastReceiver stateBroadcastReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_obserable);
+        stateBroadcastReceiver = new StateBroadcastReceiver();
+
+        IntentFilter filter=new IntentFilter();
+        filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(stateBroadcastReceiver,filter);
+
         init();
         mPathAnimView = (PathAnimView) findViewById(R.id.pathAnimView1);
         storeHouseAnimView = (StoreHouseAnimView) findViewById(R.id.pathAnimView);
@@ -55,6 +67,12 @@ public class ObserableActivity extends AppCompatActivity {
         nameObservable.addObserver(new NameObserver());
         nameObservable.setName("sam");
         nameObservable.setName("tom");
+        stateBroadcastReceiver.setOnReceivedMessageListener(new StateBroadcastReceiver.MessageListener() {
+            @Override
+            public void OnReceived(String message) {
+                Toast.makeText(ObserableActivity.this, message, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void anims() {
@@ -93,8 +111,13 @@ public class ObserableActivity extends AppCompatActivity {
         });
     }
 
-
     private GiftSendModel createGiftSendModel(){
         return new GiftSendModel((int)(Math.random()*10));
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(stateBroadcastReceiver);
     }
 }

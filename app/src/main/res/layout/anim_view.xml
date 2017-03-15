@@ -9,8 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="39dp"
         android:layout_gravity="left"
-        android:layout_marginTop="22dp"
-        >
+        android:layout_marginTop="22dp">
 
         <ImageView
             android:id="@+id/gift_userheader_iv"
@@ -59,15 +58,6 @@
         android:layout_marginLeft="120dp"
         android:src="@drawable/anim_list" />
 
-   <!-- <TextView
-        android:id="@+id/animation_num"
-        android:textColor="#0076ff"
-        android:textSize="24sp"
-        android:text="x 1"
-        android:layout_marginLeft="185dp"
-        android:layout_marginTop="12dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />-->
     <com.yukun.textapplication.views.StrokeTextView
         android:id="@+id/animation_num"
         android:layout_width="wrap_content"

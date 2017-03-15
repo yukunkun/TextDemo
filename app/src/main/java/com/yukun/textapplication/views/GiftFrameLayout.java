@@ -47,7 +47,6 @@ public class GiftFrameLayout extends FrameLayout {
         initView();
     }
 
-
     private void initView() {
         View view = mInflater.inflate(R.layout.anim_view, this, false);
         anim_rl = (RelativeLayout) view.findViewById(R.id.animation_person_rl);
