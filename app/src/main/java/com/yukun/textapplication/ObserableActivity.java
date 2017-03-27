@@ -6,7 +6,9 @@ import android.animation.AnimatorSet;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
+import android.graphics.Path;
 import android.net.ConnectivityManager;
+import android.net.ParseException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +18,7 @@ import com.mcxtzhang.pathanimlib.PathAnimView;
 import com.mcxtzhang.pathanimlib.StoreHouseAnimView;
 import com.mcxtzhang.pathanimlib.res.StoreHousePath;
 import com.mcxtzhang.pathanimlib.utils.PathParserUtils;
+import com.mcxtzhang.pathanimlib.utils.SvgPathParser;
 import com.yukun.textapplication.observerutil.NameObservable;
 import com.yukun.textapplication.observerutil.NameObserver;
 import com.yukun.textapplication.receiver.StateBroadcastReceiver;
@@ -45,21 +48,31 @@ public class ObserableActivity extends AppCompatActivity {
         registerReceiver(stateBroadcastReceiver,filter);
 
         init();
-        mPathAnimView = (PathAnimView) findViewById(R.id.pathAnimView1);
+        mPathAnimView = (PathAnimView) findViewById(R.id.pathAnimView);
         storeHouseAnimView = (StoreHouseAnimView) findViewById(R.id.pathAnimView);
         setPathAnim();
         anims();
     }
 
     private void setPathAnim() {
-        mPathAnimView.setSourcePath(PathParserUtils.getPathFromArrayFloatList(StoreHousePath.getPath("ZhangXuTong", 0.4f, 5)));
+//        mPathAnimView.setSourcePath(PathParserUtils.getPathFromArrayFloatList(StoreHousePath.getPath("ZhangXuTong", 0.4f, 5)));
 //        mPathAnimView.setAnimTime(500);
-        mPathAnimView.setColorBg(Color.WHITE).setColorFg(Color.BLACK);
+//        mPathAnimView.setColorBg(Color.WHITE).setColorFg(Color.BLACK);
 //        mPathAnimView.getPaint().setStrokeWidth(10);
 //        mPathAnimView.getPaint().setTextSize(100);
+        SvgPathParser svgPathParser = new SvgPathParser();
+        String viewpath = getResources().getString(R.string.del);
+        try {
+            Path path = svgPathParser.parsePath(viewpath);
+            mPathAnimView.setSourcePath(path);
+        } catch (java.text.ParseException e) {
+            e.printStackTrace();
+        }
+
+        mPathAnimView.getPathAnimHelper().setAnimTime(5000);
         mPathAnimView.startAnim();
-        storeHouseAnimView.setSourcePath(PathParserUtils.getPathFromArrayFloatList(StoreHousePath.getPath("2017-12-12",0.5f,5)));
-        storeHouseAnimView.setPathMaxLength(120).setAnimTime(2000).startAnim();
+//        storeHouseAnimView.setSourcePath(PathParserUtils.getPathFromArrayFloatList(StoreHousePath.getPath("2017-12-12",0.5f,5)));
+//        storeHouseAnimView.setPathMaxLength(50).setAnimTime(1000).startAnim();
     }
 
     private void init() {

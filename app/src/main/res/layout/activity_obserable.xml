@@ -32,10 +32,10 @@
             style="@style/text_flag_01"/>
     </com.yukun.textapplication.views.FlowLayout>
     <com.mcxtzhang.pathanimlib.PathAnimView
-        android:id="@+id/pathAnimView1"
+        android:id="@+id/storeView3"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:background="@color/color"
+        android:layout_height="wrap_content"
+        android:background="#b7f7d4"
         android:padding="5dp"/>
 
     <com.mcxtzhang.pathanimlib.StoreHouseAnimView

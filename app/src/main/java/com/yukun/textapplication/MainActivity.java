@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+
+import com.yukun.textapplication.livephonelogin.LivePhoneActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Observer(View view) {
-        Intent intent = new Intent(this, ObserableActivity.class);
+        Intent intent = new Intent(this, SvgActivity.class);
         startActivity(intent);
     }
 
@@ -55,4 +55,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CardActivity.class);
         startActivity(intent);
     }
+
+    public void LoginView(View view) {
+        Intent intent = new Intent(this, LivePhoneActivity.class);
+        startActivity(intent);
+    }
+
 }

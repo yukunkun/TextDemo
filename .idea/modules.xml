@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TextApplication.iml" filepath="$PROJECT_DIR$/TextApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/appa/appa.iml" filepath="$PROJECT_DIR$/appa/appa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pathanimlib/pathanimlib.iml" filepath="$PROJECT_DIR$/pathanimlib/pathanimlib.iml" />
     </modules>
   </component>
 </project>

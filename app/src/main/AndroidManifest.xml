@@ -43,8 +43,12 @@
 
 
         <!-- 反馈组件（需要加入以下声明）START -->
-        <activity android:name="com.avos.avoscloud.feedback.ThreadActivity"></activity>
-        <activity android:name=".CardActivity"></activity>
+        <activity android:name="com.avos.avoscloud.feedback.ThreadActivity" />
+        <activity android:name=".CardActivity" />
+        <activity android:name=".livephonelogin.LivePhoneActivity" />
+        <activity android:name=".liveshow.LiveMainActivity"></activity>
+        <activity android:name=".SvgActivity"></activity>
+
     </application>
 
 </manifest>
