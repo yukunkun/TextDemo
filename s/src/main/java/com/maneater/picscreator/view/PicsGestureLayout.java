@@ -976,7 +976,6 @@ public class PicsGestureLayout extends FrameLayout implements
 
 		// L.i(TAG, "删除选中项,并设置选中项为数组最后一个");
 		invalidate();
-
 	}
 
 	/** 获取当前对象的封装imagewrapper数组 */

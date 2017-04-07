@@ -1,5 +1,6 @@
 package com.yukun.textapplication;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -79,7 +80,16 @@ public class TextViewActivity extends AppCompatActivity {
 //        roateTextView.setTextColor(Color.BLUE);
 //        roateTextView.setTextSize(20);
 //        roateTextView.setClickable(true);
+
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(100, 100);
+        layoutParams.topMargin=8;
+        layoutParams.leftMargin=8;
+        layoutParams.rightMargin=8;
+        layoutParams.bottomMargin=8;
+
         layout.addTextView();
+        Intent intent=new Intent(this,MyViewActivity.class);
+        startActivity(intent);
 
     }
 

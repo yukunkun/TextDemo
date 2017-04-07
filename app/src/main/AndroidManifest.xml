@@ -48,7 +48,8 @@
         <activity android:name=".livephonelogin.LivePhoneActivity" />
         <activity android:name=".liveshow.LiveMainActivity" />
         <activity android:name=".SvgActivity" />
-        <activity android:name=".TextViewActivity"></activity>
+        <activity android:name=".TextViewActivity" />
+        <activity android:name=".MyViewActivity"></activity>
     </application>
 
 </manifest>

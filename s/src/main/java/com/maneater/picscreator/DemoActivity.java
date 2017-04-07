@@ -46,8 +46,6 @@ public class DemoActivity extends Activity implements OnClickListener {
 	private View btnModify;
 	private View btnPaint;
 	Context mContext;
-	
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -75,9 +73,6 @@ public class DemoActivity extends Activity implements OnClickListener {
 		btnDownLayout.setOnClickListener(this);
 		btnModify.setOnClickListener(this);
 		btnDelete.setOnClickListener(this);
-		
-		
-
 	}
 
 	@Override

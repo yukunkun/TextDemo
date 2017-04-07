@@ -19,7 +19,6 @@ public class DragTextView extends RelativeLayout {
     public DragTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context,attrs,0);
-
     }
 
     public DragTextView(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -38,6 +37,11 @@ public class DragTextView extends RelativeLayout {
         roateTextView.setTextColor(Color.GREEN);
         roateTextView.setPadding(5,5,5,5);
         roateTextView.setClickable(true);
-        this.addView(roateTextView);
+
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(100, 100);
+        layoutParams.topMargin=8;
+        layoutParams.leftMargin=8;
+
+        this.addView(roateTextView,layoutParams);
     }
 }
