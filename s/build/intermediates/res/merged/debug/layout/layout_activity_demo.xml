@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+    <com.maneater.picscreator.view.PicsGestureLayout
+        android:id="@id/picsGestureLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/draw_bg" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@id/btnAdd"
+                style="@style/normal_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginTop="8.0dip"
+                android:text="增加模型" />
+
+            <Button
+                android:id="@id/btnUplayout"
+                style="@style/normal_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginTop="8.0dip"
+                android:text="上移一层" />
+
+            <Button
+                android:id="@id/btnDownlayout"
+                style="@style/normal_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginTop="8.0dip"
+                android:text="下移一层" />
+
+            <Button
+                android:id="@id/btnClearSelected"
+                style="@style/normal_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginTop="8.0dip"
+                android:text="取消选择" />
+
+            <Button
+                android:id="@id/btnCopy"
+                style="@style/normal_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginTop="8.0dip"
+                android:text="复制模型" />
+
+            <Button
+                android:id="@id/btnModify"
+                style="@style/normal_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginTop="8.0dip"
+                android:text="修改模型" />
+
+            <Button
+                android:id="@id/btnDelete"
+                style="@style/normal_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginTop="8.0dip"
+                android:text="删除模型" />
+
+            <Button
+                android:id="@id/btnReset"
+                style="@style/normal_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginTop="8.0dip"
+                android:text="重置画布" />
+            <Button
+                android:id="@id/btnPaint"
+                style="@style/normal_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginTop="8.0dip"
+                android:text="画笔" />
+            
+            
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.yukun.textapplication.TextViewActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@mipmap/feng1"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+        <com.yukun.textapplication.views.DragTextView
+            android:id="@+id/reaContain"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" >
+        </com.yukun.textapplication.views.DragTextView>
+    </RelativeLayout>
+    <Button
+        android:text="but"
+        android:onClick="But"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <SeekBar
+        android:id="@+id/seekbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/addview"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </LinearLayout>
+    <com.yukun.textapplication.views.DragScaleView
+        android:id="@+id/ds"
+        android:text="我的你的"
+        android:visibility="visible"
+        android:layout_width="150dip"
+        android:layout_height="50dip"
+        android:clickable="true" />
+    <com.yukun.textapplication.views.SingleTouchView
+        android:id="@+id/SingleTouchView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:scale="1.2"
+        app:src="@drawable/circle3"
+        app:frameColor="#0022ff"
+        app:controlLocation="right_bottom"/>
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="picsGestureLayout">false</item>
+    <item type="id" name="btnAdd">false</item>
+    <item type="id" name="btnUplayout">false</item>
+    <item type="id" name="btnDownlayout">false</item>
+    <item type="id" name="btnClearSelected">false</item>
+    <item type="id" name="btnCopy">false</item>
+    <item type="id" name="btnModify">false</item>
+    <item type="id" name="btnDelete">false</item>
+    <item type="id" name="btnReset">false</item>
+    <item type="id" name="btnPaint">false</item>
+    
+</resources>

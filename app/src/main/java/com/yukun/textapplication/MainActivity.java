@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Observer(View view) {
-        Intent intent = new Intent(this, SvgActivity.class);
+        Intent intent = new Intent(this, ObserableActivity.class);
         startActivity(intent);
     }
 
@@ -61,4 +61,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void RoateView(View view) {
+        Intent intent = new Intent(this, TextViewActivity.class);
+        startActivity(intent);
+    }
 }

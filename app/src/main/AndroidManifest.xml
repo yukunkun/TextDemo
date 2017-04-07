@@ -46,9 +46,9 @@
         <activity android:name="com.avos.avoscloud.feedback.ThreadActivity" />
         <activity android:name=".CardActivity" />
         <activity android:name=".livephonelogin.LivePhoneActivity" />
-        <activity android:name=".liveshow.LiveMainActivity"></activity>
-        <activity android:name=".SvgActivity"></activity>
-
+        <activity android:name=".liveshow.LiveMainActivity" />
+        <activity android:name=".SvgActivity" />
+        <activity android:name=".TextViewActivity"></activity>
     </application>
 
 </manifest>
