@@ -3,6 +3,7 @@ package com.yukun.textapplication;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.app.Activity;
@@ -31,8 +32,7 @@ public class MyViewActivity extends AppCompatActivity {
 
         mParams=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT );
         myImage=new ImageView(this);
-        myImage.setImageResource(R.drawable.circle1);
-        myImage.setLayoutParams(mParams);
+        myImage.setImageResource(R.mipmap.ic_launcher);
         mLayout.addView(myImage);
         mButton=(Button)findViewById(R.id.myButton1);
         mButton.setOnClickListener(new OnClickListener(){
@@ -46,12 +46,8 @@ public class MyViewActivity extends AppCompatActivity {
         });
     }
     private ImageView addIcon(int id,int x,int y){
-        RelativeLayout.LayoutParams mParams=new RelativeLayout.LayoutParams(50,50 );
+        RelativeLayout.LayoutParams mParams=new RelativeLayout.LayoutParams(50,50);
 
-//        AbsoluteLayout.LayoutParams params=new AbsoluteLayout.LayoutParams(
-//                AbsoluteLayout.LayoutParams.WRAP_CONTENT,
-//                AbsoluteLayout.LayoutParams.WRAP_CONTENT,
-//                x,y);
         ImageView icon=new ImageView(this);
         icon.setImageResource(R.drawable.circle2);
         icon.setLayoutParams(mParams);
@@ -81,7 +77,7 @@ public class MyViewActivity extends AppCompatActivity {
 //myImage.layout(mX,mY,mX+myImage.getWidth(),mY+myImage.getHeight());
                 ViewGroup.LayoutParams layoutParams=myImage.getLayoutParams();
                 layoutParams.width=mX;
-                layoutParams.width=mY;
+                layoutParams.height=mY;
             myImage.setLayoutParams(layoutParams);
             break;
             default:

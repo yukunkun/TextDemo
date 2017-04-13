@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.yukun.textapplication"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -67,4 +67,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.0.1'
     apt 'com.jakewharton:butterknife-compiler:8.0.1'
     compile project(':pathanimlib')
+
+    compile 'org.greenrobot:eventbus:3.0.0'
 }

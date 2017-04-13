@@ -13,13 +13,12 @@
             android:src="@mipmap/feng1"
             android:scaleType="centerCrop"
             android:layout_width="match_parent"
-            android:layout_height="200dp" />
-        <com.yukun.textapplication.views.DragTextView
+            android:layout_height="280dp" />
+        <RelativeLayout
             android:id="@+id/reaContain"
-            android:layout_gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="200dp" >
-        </com.yukun.textapplication.views.DragTextView>
+            android:layout_height="280dp" >
+        </RelativeLayout>
     </RelativeLayout>
     <Button
         android:text="but"
@@ -49,6 +48,7 @@
         android:clickable="true" />
     <com.yukun.textapplication.views.SingleTouchView
         android:id="@+id/SingleTouchView"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:scale="1.2"

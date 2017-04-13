@@ -9,7 +9,13 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AbsoluteLayout;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.yukun.textapplication.R;
 
 /**
  * Created by yukun on 17-4-6.
@@ -22,6 +28,8 @@ public class RoateTextView extends TextView {
     int lastY;
     private int screenWidth;
     private int screenHeight;
+    private int measureWidth;
+    private int measureHeight;
 
     public RoateTextView(Context context) {
         super(context);
@@ -44,21 +52,25 @@ public class RoateTextView extends TextView {
         DisplayMetrics dm = getResources().getDisplayMetrics();
         screenWidth = dm.widthPixels;
         screenHeight = dm.heightPixels;
-        this.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
     }
-    boolean isCheck=false;
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        measureWidth = MeasureSpec.getSize(widthMeasureSpec);
+        measureHeight = MeasureSpec.getSize(heightMeasureSpec);
+        int measureWidthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int measureHeightMode = MeasureSpec.getMode(heightMeasureSpec);
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         View v=this;
         int action=event.getAction();
-        Log.i("@@@@@@", "Touch:"+action);
         switch(action){
             case MotionEvent.ACTION_DOWN:
+                Log.i("@@@@@@", "Touch:"+action);
                 lastX = (int) event.getRawX();
                 lastY = (int) event.getRawY();
                 break;
@@ -91,9 +103,22 @@ public class RoateTextView extends TextView {
                 lastY = (int) event.getRawY();
                 break;
             case MotionEvent.ACTION_UP:
+                setLayout(this,(v.getLeft()),(v.getTop()));
                 break;
         }
         return super.onTouchEvent(event);
+    }
+
+    public  void setLayout(View view,int x,int y) {
+
+//        Log.i("-----x_y",measureWidth+"---"+measureWidth);
+//        Log.i("----x-_-y",this.getWidth()+"---"+this.getHeight());
+
+        RelativeLayout.MarginLayoutParams margin=new RelativeLayout.MarginLayoutParams(view.getLayoutParams());
+//        margin.setMargins(x,y, x+this.getWidth(), y+this.getHeight());
+        margin.setMargins(x,y, x+measureWidth, y+measureWidth);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(margin);
+        view.setLayoutParams(layoutParams);
     }
 
     @Override
@@ -101,19 +126,14 @@ public class RoateTextView extends TextView {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(4);
         paint.setAntiAlias(true);
-        rect=new Rect(0, 0, getMeasuredWidth(), getMeasuredHeight());
-        if(isCheck){
+        rect=new Rect(0, 0, this.getLeft(), this.getHeight());
+        if(this.isFocused()){
             canvas.drawRect( rect,paint);
         }
         paint.setTextAlign(Paint.Align.LEFT);
         super.onDraw(canvas);
     }
-
     float progress=0;
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-    }
     public void setRoate(float progress){
         this.progress=progress;
         invalidate();

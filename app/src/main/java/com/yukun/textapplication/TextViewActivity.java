@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -21,7 +22,7 @@ public class TextViewActivity extends AppCompatActivity {
     private SeekBar seekBar;
     private SeekBar seekBar2;
     private int size=15;
-    private DragTextView layout;
+    private RelativeLayout layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class TextViewActivity extends AppCompatActivity {
 //        roateTextView = (RoateTextView) findViewById(R.id.roatetextview);
         seekBar = ((SeekBar) findViewById(R.id.seekbar));
         seekBar2 = ((SeekBar) findViewById(R.id.seekbar2));
-        layout = (DragTextView) findViewById(R.id.reaContain);
+        layout = (RelativeLayout) findViewById(R.id.reaContain);
 //        seekBar.setOnSeekBarChangeListener(this);
         seekBar.setMax(360);
         seekBar2.setMax(100);
@@ -74,22 +75,19 @@ public class TextViewActivity extends AppCompatActivity {
 //    }
 
     public void But(View view) {
-
-//        RoateTextView roateTextView=new RoateTextView(this);
-//        roateTextView.setText("我们的东西");
-//        roateTextView.setTextColor(Color.BLUE);
-//        roateTextView.setTextSize(20);
-//        roateTextView.setClickable(true);
-
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(100, 100);
-        layoutParams.topMargin=8;
-        layoutParams.leftMargin=8;
-        layoutParams.rightMargin=8;
-        layoutParams.bottomMargin=8;
-
-        layout.addTextView();
+        RelativeLayout.LayoutParams mParams=
+                new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT );
+        RoateTextView roateTextView=new RoateTextView(this);
+        roateTextView.setText("我们的东西真的");
+        roateTextView.setTextColor(Color.BLUE);
+        roateTextView.setTextSize(20);
+        roateTextView.setClickable(true);
+        roateTextView.setLayoutParams(mParams);
+        layout.addView(roateTextView);
+//        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(100, 100);
+//        layout.addTextView();
         Intent intent=new Intent(this,MyViewActivity.class);
-        startActivity(intent);
+//        startActivity(intent);
 
     }
 
