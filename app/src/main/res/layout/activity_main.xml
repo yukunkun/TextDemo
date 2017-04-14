@@ -5,44 +5,57 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.yukun.textapplication.MainActivity">
-
-    <Button
-        android:id="@+id/textureView"
-        android:onClick="TextureView"
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextureView" />
-    <Button
-        android:id="@+id/observer"
-        android:onClick="Observer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Observer" />
-    <Button
-        android:id="@+id/DragListview"
-        android:onClick="DragListview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="DragListview" />
-    <Button
-        android:text="Chat"
-        android:onClick="Chat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:text="CardView"
-        android:onClick="CardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:text="LoginView"
-        android:onClick="LoginView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:text="RoateView"
-        android:onClick="RoateView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/textureView"
+            android:onClick="TextureView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextureView" />
+        <Button
+            android:id="@+id/observer"
+            android:onClick="Observer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Observer" />
+        <Button
+            android:id="@+id/DragListview"
+            android:onClick="DragListview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DragListview" />
+        <Button
+            android:text="Chat"
+            android:onClick="Chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="CardView"
+            android:onClick="CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="LoginView"
+            android:onClick="LoginView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="RoateView"
+            android:onClick="RoateView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="AddList"
+            android:onClick="AddList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>
 
 </LinearLayout>
