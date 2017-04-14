@@ -29,7 +29,6 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -46,8 +45,8 @@ public class ChatActivity extends AppCompatActivity {
     EditText mEtMessage;
     @BindView(R.id.bt_send)
     Button mBtSend;
-    private AVIMClient tom;
-    private AVIMClient jerry;
+    private AVIMClient mClientTom;
+    private AVIMClient mClientJerry;
 //    private String mConverId;
     //加入者的消息
     private String mConverId="58f04a6744d904006cb5ee46";
@@ -88,8 +87,8 @@ public class ChatActivity extends AppCompatActivity {
 
     public void createChatRoom() {
 
-        tom = AVIMClient.getInstance("Tom");
-        tom.open(new AVIMClientCallback() {
+        mClientTom = AVIMClient.getInstance("Tom");
+        mClientTom.open(new AVIMClientCallback() {
             @Override
             public void done(AVIMClient client, AVIMException e) {
                 if (e == null) {
@@ -119,13 +118,13 @@ public class ChatActivity extends AppCompatActivity {
 
     public void joinRoom() {
         //这是jerry加入聊天室
-        jerry = AVIMClient.getInstance("Jerry");
+        mClientJerry = AVIMClient.getInstance("Jerry");
         //建立连接
-        jerry.open(new AVIMClientCallback() {
+        mClientJerry.open(new AVIMClientCallback() {
             @Override
             public void done(AVIMClient avimClient, AVIMException e) {
                 //获取聊天室
-                AVIMConversation avimConversation = jerry.getConversation(mConverId);
+                AVIMConversation avimConversation = mClientJerry.getConversation(mConverId);
                 //加入聊天室
                 avimConversation.join(new AVIMConversationCallback() {
                     @Override
@@ -154,7 +153,7 @@ public class ChatActivity extends AppCompatActivity {
      */
     private void sendMessage(String sId, String msg) {
         //这是第一个人.创建聊天室的人
-        AVIMConversation avimConversation = tom.getConversation(sId);//由id,得到聊天室的对象,发送消息,接收消息
+        AVIMConversation avimConversation = mClientTom.getConversation(sId);//由id,得到聊天室的对象,发送消息,接收消息
         AVIMTextMessage avimTextMessage = new AVIMTextMessage();
         Map<String, Object> map = new HashMap<>();
         avimTextMessage.setAttrs(map);
@@ -190,7 +189,7 @@ public class ChatActivity extends AppCompatActivity {
 
     private void sendMessages(String roomId, String msg) {
         //这是加入聊天室的人
-        AVIMConversation avimConversation = jerry.getConversation(roomId);//由id,得到聊天室的对象,发送消息,接收消息
+        AVIMConversation avimConversation = mClientJerry.getConversation(roomId);//由id,得到聊天室的对象,发送消息,接收消息
         AVIMTextMessage avimTextMessage = new AVIMTextMessage();
         Map<String, Object> map = new HashMap<>();
         map.put("msg", "attr message");//发送附加消息,头像啥的都可以
@@ -251,16 +250,16 @@ public class ChatActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
-        if (tom == null) {
+        if (mClientTom == null) {
             return;
         }
-        AVIMConversation avimConversation = tom.getConversation(mConverId);
+        AVIMConversation avimConversation = mClientTom.getConversation(mConverId);
         avimConversation.quit(new AVIMConversationCallback() {
             @Override
             public void done(AVIMException e) {
                 if (e == null) {
                 }
-                tom.close(new AVIMClientCallback() {
+                mClientTom.close(new AVIMClientCallback() {
                     @Override
                     public void done(AVIMClient avimClient, AVIMException e) {
                         if (e == null) {
@@ -269,8 +268,6 @@ public class ChatActivity extends AppCompatActivity {
                 });
             }
         });
-
-
     }
     //    public void sendMessageToJerryFromTom() {
 //        // Tom 用自己的名字作为clientId，获取AVIMClient对象实例
