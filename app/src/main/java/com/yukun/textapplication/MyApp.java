@@ -1,6 +1,5 @@
 package com.yukun.textapplication;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -17,11 +16,12 @@ import com.yukun.textapplication.livephonelogin.bean.User;
 import com.yukun.textapplication.views.StrokeTextView;
 
 import org.greenrobot.eventbus.EventBus;
+import org.litepal.LitePalApplication;
 
 /**
  * Created by yukun on 17-2-28.
  */
-public class MyApp extends Application {
+public class MyApp extends LitePalApplication {
     String APPID="dkYtqfYnQsJR6NDzQd1lMNgT-gzGzoHsz";
     String APPKEY="RoFaOKPxeSI7g9IFVUxr8u0P";
     User users=null;

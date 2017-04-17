@@ -1,2 +1,2 @@
-include ':app', ':appa', ':pathanimlib'
+include ':app', ':pathanimlib'
 include ':s'

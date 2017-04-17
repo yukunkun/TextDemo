@@ -8,10 +8,12 @@ import android.widget.Button;
 
 import com.yukun.textapplication.chat.ChatActivity;
 import com.yukun.textapplication.chat.ChatListActivity;
+import com.yukun.textapplication.litepaldatabase.LitepalActivity;
 import com.yukun.textapplication.livephonelogin.LivePhoneActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -70,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void AddList(View view) {
         Intent intent = new Intent(this, ChatListActivity.class);
+        startActivity(intent);
+    }
+
+    public void Litepal(View view) {
+        Intent intent = new Intent(this, LitepalActivity.class);
         startActivity(intent);
     }
 }
