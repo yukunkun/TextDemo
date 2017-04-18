@@ -79,4 +79,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LitepalActivity.class);
         startActivity(intent);
     }
+
+    public void CircleView(View view) {
+        Intent intent = new Intent(this, CircleActivity.class);
+        startActivity(intent);
+    }
 }
