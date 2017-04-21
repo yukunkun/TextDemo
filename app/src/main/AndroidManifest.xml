@@ -64,6 +64,7 @@
         </activity>
         <activity android:name=".photo.PhotoListActivity">
         </activity>
+        <service android:name=".press.MediaShrinkService"/>
     </application>
 
 </manifest>

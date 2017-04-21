@@ -57,7 +57,7 @@ dependencies {
     compile 'com.github.mcxtzhang:ZLayoutManager:V1.1.0'
     compile 'com.android.support:recyclerview-v7:25.1.1'
     compile 'com.github.bumptech.glide:glide:3.5.2'
-//    compile 'com.github.mcxtzhang:PathAnimView:V1.0.0'
+    //    compile 'com.github.mcxtzhang:PathAnimView:V1.0.0'
     //rxjava
     compile 'io.reactivex:rxjava:1.2.1'
     compile 'io.reactivex:rxandroid:1.2.1'
@@ -67,10 +67,12 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.0.1'
     apt 'com.jakewharton:butterknife-compiler:8.0.1'
     compile project(':pathanimlib')
-
     compile 'org.greenrobot:eventbus:3.0.0'
     //郭林的数据库框架
     compile 'org.litepal.android:core:1.5.1'
     //baseadapter
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v1.9.7'
+
+    compile 'org.jdeferred:jdeferred:1.2.4'
+    compile 'org.jdeferred:jdeferred-core:1.2.4'
 }
