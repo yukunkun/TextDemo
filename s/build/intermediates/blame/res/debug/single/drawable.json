@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/yukun/AndroidStudioProjects/TextApplication/s/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
-        "source": "/home/yukun/AndroidStudioProjects/TextApplication/s/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
-    },
-    {
         "merged": "/home/yukun/AndroidStudioProjects/TextApplication/s/build/intermediates/res/merged/debug/drawable/abc_ic_arrow_drop_right_black_24dp.xml",
         "source": "/home/yukun/AndroidStudioProjects/TextApplication/s/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "/home/yukun/AndroidStudioProjects/TextApplication/s/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
+        "source": "/home/yukun/AndroidStudioProjects/TextApplication/s/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
     },
     {
         "merged": "/home/yukun/AndroidStudioProjects/TextApplication/s/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
@@ -48,12 +48,12 @@
         "source": "/home/yukun/AndroidStudioProjects/TextApplication/s/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/drawable/notification_icon_background.xml"
     },
     {
-        "merged": "/home/yukun/AndroidStudioProjects/TextApplication/s/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
-        "source": "/home/yukun/AndroidStudioProjects/TextApplication/s/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/drawable/abc_item_background_holo_dark.xml"
-    },
-    {
         "merged": "/home/yukun/AndroidStudioProjects/TextApplication/s/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
         "source": "/home/yukun/AndroidStudioProjects/TextApplication/s/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/drawable/abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "/home/yukun/AndroidStudioProjects/TextApplication/s/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
+        "source": "/home/yukun/AndroidStudioProjects/TextApplication/s/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/drawable/abc_item_background_holo_dark.xml"
     },
     {
         "merged": "/home/yukun/AndroidStudioProjects/TextApplication/s/build/intermediates/res/merged/debug/drawable/btn_control_selector.xml",

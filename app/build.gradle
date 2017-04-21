@@ -71,4 +71,6 @@ dependencies {
     compile 'org.greenrobot:eventbus:3.0.0'
     //郭林的数据库框架
     compile 'org.litepal.android:core:1.5.1'
+    //baseadapter
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v1.9.7'
 }

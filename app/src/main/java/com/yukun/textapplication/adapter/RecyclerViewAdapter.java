@@ -25,7 +25,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int typeCount) {
         return new MyHolder(LayoutInflater.from(context).inflate(R.layout.card_item,null));
     }
 
@@ -45,7 +45,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         public MyHolder(View itemView) {
             super(itemView);
             imageView= (ImageView) itemView.findViewById(R.id.image);
-
         }
     }
 }

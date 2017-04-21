@@ -65,6 +65,11 @@
             android:onClick="CircleView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+        <Button
+            android:text="Ｐｈｏｔｏ"
+            android:onClick="photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </ScrollView>
 

@@ -10,6 +10,8 @@ import com.yukun.textapplication.chat.ChatActivity;
 import com.yukun.textapplication.chat.ChatListActivity;
 import com.yukun.textapplication.litepaldatabase.LitepalActivity;
 import com.yukun.textapplication.livephonelogin.LivePhoneActivity;
+import com.yukun.textapplication.mvptest.MVPActivity;
+import com.yukun.textapplication.photo.PhotoListActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void TextureView(View view) {
-        Intent intent = new Intent(this, TextureViewActivity.class);
+//        Intent intent = new Intent(this, TextureViewActivity.class);
+        Intent intent = new Intent(this, MVPActivity.class);
         startActivity(intent);
     }
 
@@ -82,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void CircleView(View view) {
         Intent intent = new Intent(this, CircleActivity.class);
+        startActivity(intent);
+    }
+
+    public void photo(View view) {
+        Intent intent = new Intent(this, PhotoListActivity.class);
         startActivity(intent);
     }
 }

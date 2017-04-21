@@ -56,6 +56,14 @@
         </activity>
         <activity android:name=".CircleActivity">
         </activity>
+        <activity android:name=".mvptest.MVPActivity">
+        </activity>
+        <activity android:name=".mvptest.BaseActivity">
+        </activity>
+        <activity android:name=".photo.ListDetailActivity">
+        </activity>
+        <activity android:name=".photo.PhotoListActivity">
+        </activity>
     </application>
 
 </manifest>
