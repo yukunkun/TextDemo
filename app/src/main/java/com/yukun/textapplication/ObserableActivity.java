@@ -14,11 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.mcxtzhang.pathanimlib.PathAnimView;
-import com.mcxtzhang.pathanimlib.StoreHouseAnimView;
-import com.mcxtzhang.pathanimlib.res.StoreHousePath;
-import com.mcxtzhang.pathanimlib.utils.PathParserUtils;
-import com.mcxtzhang.pathanimlib.utils.SvgPathParser;
+
 import com.yukun.textapplication.observerutil.NameObservable;
 import com.yukun.textapplication.observerutil.NameObserver;
 import com.yukun.textapplication.receiver.StateBroadcastReceiver;
@@ -30,8 +26,8 @@ import java.util.List;
 
 public class ObserableActivity extends AppCompatActivity {
 
-    private PathAnimView mPathAnimView;
-    private StoreHouseAnimView storeHouseAnimView;
+//    private PathAnimView mPathAnimView;
+//    private StoreHouseAnimView storeHouseAnimView;
     private GiftFrameLayout giftFrameLayout1;
     private GiftFrameLayout giftFrameLayout2;
     List<GiftSendModel> giftSendModelList = new ArrayList<GiftSendModel>();
@@ -48,8 +44,8 @@ public class ObserableActivity extends AppCompatActivity {
         registerReceiver(stateBroadcastReceiver,filter);
 
         init();
-        mPathAnimView = (PathAnimView) findViewById(R.id.pathAnimView);
-        storeHouseAnimView = (StoreHouseAnimView) findViewById(R.id.pathAnimView);
+//        mPathAnimView = (PathAnimView) findViewById(R.id.pathAnimView);
+//        storeHouseAnimView = (StoreHouseAnimView) findViewById(R.id.pathAnimView);
         setPathAnim();
         anims();
     }
@@ -60,17 +56,17 @@ public class ObserableActivity extends AppCompatActivity {
 //        mPathAnimView.setColorBg(Color.WHITE).setColorFg(Color.BLACK);
 //        mPathAnimView.getPaint().setStrokeWidth(10);
 //        mPathAnimView.getPaint().setTextSize(100);
-        SvgPathParser svgPathParser = new SvgPathParser();
-        String viewpath = getResources().getString(R.string.del);
-        try {
-            Path path = svgPathParser.parsePath(viewpath);
-            mPathAnimView.setSourcePath(path);
-        } catch (java.text.ParseException e) {
-            e.printStackTrace();
-        }
-
-        mPathAnimView.getPathAnimHelper().setAnimTime(5000);
-        mPathAnimView.startAnim();
+//        SvgPathParser svgPathParser = new SvgPathParser();
+//        String viewpath = getResources().getString(R.string.del);
+//        try {
+//            Path path = svgPathParser.parsePath(viewpath);
+//            mPathAnimView.setSourcePath(path);
+//        } catch (java.text.ParseException e) {
+//            e.printStackTrace();
+//        }
+//
+//        mPathAnimView.getPathAnimHelper().setAnimTime(5000);
+//        mPathAnimView.startAnim();
 //        storeHouseAnimView.setSourcePath(PathParserUtils.getPathFromArrayFloatList(StoreHousePath.getPath("2017-12-12",0.5f,5)));
 //        storeHouseAnimView.setPathMaxLength(50).setAnimTime(1000).startAnim();
     }
