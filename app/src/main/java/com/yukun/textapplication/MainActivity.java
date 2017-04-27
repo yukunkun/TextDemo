@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void DragListview(View view) {
-        Intent intent = new Intent(this, DragListViewActivity.class);
+        Intent intent = new Intent(this, GestureLockActivity.class);
         startActivity(intent);
     }
 

@@ -18,7 +18,6 @@ import java.io.File;
 
 
 /**
- * Created by haiyang-lu on 16-10-27.
  * 压缩视频的工具类
  */
 public class CompressUtil {

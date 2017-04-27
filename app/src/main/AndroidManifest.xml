@@ -64,7 +64,11 @@
         </activity>
         <activity android:name=".photo.PhotoListActivity">
         </activity>
+
         <service android:name=".press.MediaShrinkService"/>
+
+        <activity android:name=".GestureLockActivity">
+        </activity>
     </application>
 
 </manifest>
