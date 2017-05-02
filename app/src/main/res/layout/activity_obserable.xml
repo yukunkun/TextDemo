@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="#FFFFFF"
     android:layout_height="match_parent"
     tools:context="com.yukun.textapplication.ObserableActivity">
     <com.yukun.textapplication.views.FlowLayout
@@ -31,7 +32,7 @@
             android:text="工程师"
             style="@style/text_flag_01"/>
     </com.yukun.textapplication.views.FlowLayout>
-    <com.mcxtzhang.pathanimlib.PathAnimView
+<!--    <com.mcxtzhang.pathanimlib.PathAnimView
         android:id="@+id/storeView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:background="@android:color/black"
-        android:padding="5dp"/>
+        android:padding="5dp"/>-->
     <com.yukun.textapplication.views.GiftFrameLayout
         android:id="@+id/gift_layout1"
         android:layout_width="250dp"
@@ -58,4 +59,58 @@
         android:text="start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <com.yukun.textapplication.views.BMoveView
+            android:id="@+id/bmoveview"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+        <RadioGroup
+            android:id="@+id/rg_group"
+            android:gravity="center"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <RadioButton
+                android:id="@+id/rb_first"
+                android:button="@null"
+                android:text="索引"
+                android:layout_weight="1"
+                android:textColor="@drawable/rb_button"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+            <RadioButton
+                android:id="@+id/rb_second"
+                android:button="@null"
+                android:text="索引"
+                android:layout_weight="1"
+                android:textColor="@drawable/rb_button"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+            <RadioButton
+                android:id="@+id/rb_third"
+                android:button="@null"
+                android:text="索引"
+                android:layout_weight="1"
+                android:textColor="@drawable/rb_button"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+        </RadioGroup>
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+
 </LinearLayout>

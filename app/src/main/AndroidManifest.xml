@@ -69,6 +69,8 @@
 
         <activity android:name=".GestureLockActivity">
         </activity>
+        <activity android:name=".PathAnimActivity">
+        </activity>
     </application>
 
 </manifest>

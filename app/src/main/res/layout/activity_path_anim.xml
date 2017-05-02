@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:yk="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.yukun.textapplication.PathAnimActivity">
+    <com.yukun.textapplication.views.DynamicHeartView
+        android:id="@+id/dynamicHeartView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"/>
+    <com.yukun.textapplication.views.CircleProgressbar
+        android:id="@+id/circleprogress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        yk:circleDuration="1500"
+        yk:circleRadio="25"
+        yk:circleWidth="10"/>
+    <com.yukun.textapplication.views.VoiceLoadView
+        android:id="@+id/voiceloadview"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        yk:bg="@mipmap/circle5"
+        yk:circleWidth="8"
+        yk:firstColor="#949193"
+        yk:secondColor="#5ff24c"
+        yk:dotCount="12"
+        yk:splitSize="8"
+        yk:circleRadio="60"
+        />
+</LinearLayout>

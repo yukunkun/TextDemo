@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <attr name="circleDuration" format="integer" />
+    <attr name="circleRadio" format="integer" />
+    <attr name="circleWidth" format="integer" />
+    <declare-styleable name="CircleProgressbar" >
+        <attr name="circleDuration" />
+        <attr name="circleRadio" />
+        <attr name="circleWidth" />
+    </declare-styleable>
+
+    <attr name="firstColor" format="color" />
+    <attr name="secondColor" format="color" />
+    <!--<attr name="circleWidth" format="dimension" />-->
+    <attr name="dotCount" format="integer" />
+    <attr name="splitSize" format="integer" />
+    <attr name="bg" format="reference"></attr>
+
+    <declare-styleable name="VoiceLoadView">
+        <attr name="firstColor" />
+        <attr name="secondColor" />
+        <attr name="circleWidth" />
+        <attr name="dotCount" />
+        <attr name="splitSize" />
+        <attr name="bg" />
+        <attr name="circleRadio" />
+    </declare-styleable>
+</resources>

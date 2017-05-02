@@ -92,4 +92,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PhotoListActivity.class);
         startActivity(intent);
     }
+
+    public void PathAnim(View view) {
+        Intent intent = new Intent(this, PathAnimActivity.class);
+        startActivity(intent);
+    }
 }

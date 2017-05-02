@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:text="Observer" />
         <Button
+            android:visibility="gone"
             android:id="@+id/DragListview"
             android:onClick="DragListview"
             android:layout_width="match_parent"
@@ -33,10 +34,12 @@
         <Button
             android:text="Chat"
             android:onClick="Chat"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <Button
             android:text="CardView"
+            android:visibility="gone"
             android:onClick="CardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -66,8 +69,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <Button
-            android:text="Ｐｈｏｔｏ"
+            android:text="photo"
             android:onClick="photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="PathAnim"
+            android:onClick="PathAnim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>

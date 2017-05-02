@@ -3,6 +3,7 @@ package com.yukun.textapplication;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
@@ -12,12 +13,19 @@ import android.net.ParseException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.PathInterpolator;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 
 import com.yukun.textapplication.observerutil.NameObservable;
 import com.yukun.textapplication.observerutil.NameObserver;
 import com.yukun.textapplication.receiver.StateBroadcastReceiver;
+import com.yukun.textapplication.views.BMoveView;
 import com.yukun.textapplication.views.GiftFrameLayout;
 import com.yukun.textapplication.views.GiftSendModel;
 
@@ -32,6 +40,8 @@ public class ObserableActivity extends AppCompatActivity {
     private GiftFrameLayout giftFrameLayout2;
     List<GiftSendModel> giftSendModelList = new ArrayList<GiftSendModel>();
     private StateBroadcastReceiver stateBroadcastReceiver;
+    private int lastPos;
+    private int firstPos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,34 +54,85 @@ public class ObserableActivity extends AppCompatActivity {
         registerReceiver(stateBroadcastReceiver,filter);
 
         init();
-//        mPathAnimView = (PathAnimView) findViewById(R.id.pathAnimView);
-//        storeHouseAnimView = (StoreHouseAnimView) findViewById(R.id.pathAnimView);
-        setPathAnim();
         anims();
+        bMoveInit();
     }
 
-    private void setPathAnim() {
-//        mPathAnimView.setSourcePath(PathParserUtils.getPathFromArrayFloatList(StoreHousePath.getPath("ZhangXuTong", 0.4f, 5)));
-//        mPathAnimView.setAnimTime(500);
-//        mPathAnimView.setColorBg(Color.WHITE).setColorFg(Color.BLACK);
-//        mPathAnimView.getPaint().setStrokeWidth(10);
-//        mPathAnimView.getPaint().setTextSize(100);
-//        SvgPathParser svgPathParser = new SvgPathParser();
-//        String viewpath = getResources().getString(R.string.del);
-//        try {
-//            Path path = svgPathParser.parsePath(viewpath);
-//            mPathAnimView.setSourcePath(path);
-//        } catch (java.text.ParseException e) {
-//            e.printStackTrace();
-//        }
-//
-//        mPathAnimView.getPathAnimHelper().setAnimTime(5000);
-//        mPathAnimView.startAnim();
-//        storeHouseAnimView.setSourcePath(PathParserUtils.getPathFromArrayFloatList(StoreHousePath.getPath("2017-12-12",0.5f,5)));
-//        storeHouseAnimView.setPathMaxLength(50).setAnimTime(1000).startAnim();
+    private void bMoveInit() {
+        BMoveView bMoveView= (BMoveView) findViewById(R.id.bmoveview);
+        RadioGroup radioGroup= (RadioGroup) findViewById(R.id.rg_group);
+        ((RadioButton) (radioGroup.getChildAt(0))).setChecked(true);
+        firstPos=0;
+        bMoveView.startAnim();
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                for (int i = 0; i < group.getChildCount(); i++) {
+                    boolean checked = ((RadioButton) (group.getChildAt(i))).isChecked();
+                    if(checked){
+                        lastPos=i;
+                        bMoveView.setTwoPos(firstPos,lastPos);
+//                        bMoveView.setPosition(i);
+//                        bMoveView.startAnim();
+//                        bMoveView.startLineAnim();
+//                        bMoveView.setRoationx(0);
+//                        bMoveView.startLineEndAnim();
+                        firstPos=lastPos;
+                    }
+                }
+            }
+        });
     }
+
+    public void testPathAnimator(){
+        final FrameLayout l = (FrameLayout) findViewById(R.id.root_view);
+
+        final ImageView imageView = new ImageView(this);
+        imageView.setImageResource(R.mipmap.ic_launcher);
+        FrameLayout.LayoutParams param = new FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        l.addView(imageView, param);
+
+        Path path = new Path();
+        path.moveTo(200, 200);
+
+        path.quadTo(800, 200, 800, 800);
+
+        PathInterpolator pathInterpolator = new PathInterpolator(0.33f,0f,0.12f,1f);
+        AnimatorSet animSet = new AnimatorSet();
+        animSet.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                l.removeView(imageView);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+                l.removeView(imageView);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+            }
+        });
+        ObjectAnimator scalex = ObjectAnimator.ofFloat(imageView, View.SCALE_X, 1.0f, 0.3f);
+        ObjectAnimator scaley = ObjectAnimator.ofFloat(imageView, View.SCALE_Y, 1.0f, 0.3f);
+        ObjectAnimator traslateAnimator = ObjectAnimator.ofFloat(imageView, "x", "y", path);
+
+        animSet.playTogether(scalex, scaley, traslateAnimator);
+
+        animSet.setInterpolator(pathInterpolator);
+        animSet.setDuration(1500);
+        animSet.start();
+    }
+
 
     private void init() {
+        testPathAnimator();
         NameObservable nameObservable=new NameObservable();
         nameObservable.addObserver(new NameObserver());
         nameObservable.setName("sam");
