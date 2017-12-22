@@ -4,7 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TextApplication.iml" filepath="$PROJECT_DIR$/TextApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/s/s.iml" filepath="$PROJECT_DIR$/s/s.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imagefilter/imagefilter.iml" filepath="$PROJECT_DIR$/imagefilter/imagefilter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/swipeitemdemo/swipeitemdemo.iml" filepath="$PROJECT_DIR$/swipeitemdemo/swipeitemdemo.iml" />
     </modules>
   </component>
 </project>

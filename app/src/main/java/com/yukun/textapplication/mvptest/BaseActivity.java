@@ -8,16 +8,17 @@ import com.yukun.textapplication.R;
 
 import butterknife.ButterKnife;
 
-public class BaseActivity<T extends Controler.BasePresent> extends AppCompatActivity {
+public abstract class BaseActivity<T extends Controler.BasePresent> extends AppCompatActivity {
     public T basePresent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_base);
+        setContentView(setLayout());
         ButterKnife.bind(this);
         Log.i("-----","onsubscribe");
         basePresent.onsubscribe();
+        initView();
     }
 
 
@@ -27,8 +28,7 @@ public class BaseActivity<T extends Controler.BasePresent> extends AppCompatActi
         Log.i("-----","unsubscribe");
         basePresent.unsubscribe();
     }
+    abstract int setLayout();
 
-   public void setLayout(int layout){
-       setContentView(layout);
-   }
+    abstract void initView();
 }

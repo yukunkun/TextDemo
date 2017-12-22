@@ -116,8 +116,6 @@ public class CircleProgressbar extends View {
             }
         }
         a.recycle();
-
-
         mRadio=dip2px(context,mCircleRadio);
         mPathMeasure = new PathMeasure();
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);

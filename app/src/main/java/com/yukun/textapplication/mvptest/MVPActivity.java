@@ -18,7 +18,7 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class MVPActivity extends BaseActivity implements Controler.View {
+public class MVPActivity extends BaseActivity<MVPPresent> implements Controler.View {
 
     @BindView(R.id.rv_list)
     RecyclerView mRvList;
@@ -28,14 +28,24 @@ public class MVPActivity extends BaseActivity implements Controler.View {
     int PAGE_SIZE;
     private List<Status> mStatuses;
 
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+////        setContentView(R.layout.activity_mvp);
+////        setLayout(R.layout.activity_mvp); //加载在baseactivity的布局,使用ButterKnife
+//
+//        super.onCreate(savedInstanceState);//这句必须在最后,表示先执行上面的代码,后执行baseactivity的代码
+////        init();
+//    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-//        setContentView(R.layout.activity_mvp);
-        setLayout(R.layout.activity_mvp); //加载在baseactivity的布局,使用ButterKnife
+    int setLayout() {
+        return R.layout.activity_mvp;
+    }
+
+    @Override
+    void initView() {
         MVPPresent mvpPresent = new MVPPresent(this);
         this.basePresent = mvpPresent;
-        super.onCreate(savedInstanceState);//这句必须在最后,表示先执行上面的代码,后执行baseactivity的代码
-//        init();
     }
 
     @Override
